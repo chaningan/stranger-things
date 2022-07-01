@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { fetchPosts } from "../api/posts";
 import SinglePost from "./SinglePost";
-export default function Posts() {
+
+export default function PostList() {
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
     const getAllPosts = async () => {
       const result = await fetchPosts();
-      setPostList(result);
+      console.log(result);
+      setPostList(result.data.posts);
     };
     getAllPosts();
   }, []);

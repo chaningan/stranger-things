@@ -4,7 +4,7 @@ import {
   Logout,
   Messages,
   NavBar,
-  Posts,
+  PostList,
   Profile,
   Users,
 } from "components";
@@ -17,7 +17,7 @@ export default function App() {
         {/* <Route path="/home" element={<Home />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/messages" element={<Messages />} /> */}
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts" element={<PostList />} />
         {/* <Route path="/profile" element={<Profile />} />
         <Route path="/users" element={<Users />} /> */}
       </Routes>
