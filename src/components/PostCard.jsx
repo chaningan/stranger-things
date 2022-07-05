@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { fetchPostById } from "api/posts";
 
-export default function SinglePost({ post }) {
+export default function PostCard({ post }) {
   return (
     <div>
       <ul>
