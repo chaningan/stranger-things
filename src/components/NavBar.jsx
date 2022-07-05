@@ -8,6 +8,7 @@ export default function NavBar() {
       <Link to="/posts">Post </Link>
       <Link to="/profile">Profile </Link>
       <Link to="/Register">Register </Link>
+      <Link to="/login">Login</Link>
       <Link to="/logout">Logout </Link>
     </nav>
   );

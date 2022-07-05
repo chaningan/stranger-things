@@ -8,7 +8,7 @@ export const fetchPosts = async () => {
 
 export const fetchPostById = async (id) => {
   const response = await fetch(
-    `"https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/posts"${id}`
+    `https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/posts/${id}`
   );
   const result = await response.json();
   return result;

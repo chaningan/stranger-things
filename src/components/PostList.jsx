@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchPosts } from "../api/posts";
 import PostCard from "./PostCard";
 
-export default function PostList() {
-  const [postList, setPostList] = useState([]);
-
+export default function PostList({ postList, setPostList }) {
   useEffect(() => {
     const getAllPosts = async () => {
       const result = await fetchPosts();
