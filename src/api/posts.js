@@ -30,3 +30,34 @@ export const createPost = async (token, postObj) => {
   const result = await response.json();
   return result;
 };
+
+export const deletePost = async (token, id) => {
+  const response = await fetch(
+    `https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/posts/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  const result = await response.json();
+  return result;
+};
+
+export const editPost = async (token, id, postObj) => {
+  const response = await fetch(
+    `https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/posts/${id}`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer TOKEN_STRING_HERE",
+      },
+      body: JSON.stringify({ post: postObj }),
+    }
+  );
+  const result = await response.json();
+  return result;
+};

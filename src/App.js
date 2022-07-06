@@ -52,7 +52,14 @@ export default function App() {
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route
           path="/posts/:id"
-          element={<SinglePost setPostList={setPostList} postList={postList} />}
+          element={
+            <SinglePost
+              setPostList={setPostList}
+              postList={postList}
+              currentUser={currentUser}
+              token={token}
+            />
+          }
         />
         <Route path="/login" element={<Login setToken={setToken} />} />
         {token ? (
