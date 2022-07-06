@@ -38,7 +38,6 @@ export default function SinglePost({
         <button
           onClick={() => {
             editPost(token, singlePost?._id, singlePost);
-            navigate("/");
           }}
         >
           Edit
