@@ -11,6 +11,7 @@ export default function Register({ setToken, setNewUser }) {
 
   return (
     <div>
+      <h4>Register Here:</h4>
       <form
         onSubmit={async (e) => {
           e.preventDefault();

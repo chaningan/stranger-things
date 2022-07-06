@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { loginUser } from "api/auth";
 import { useNavigate } from "react-router-dom";
+
 export default function Login({ setToken }) {
+  console.log(setToken);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
@@ -21,16 +23,16 @@ export default function Login({ setToken }) {
       >
         <input
           value={username}
-          placeholder="username"
+          placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
           value={password}
-          placeholder="password"
+          placeholder="Password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Submit!</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );

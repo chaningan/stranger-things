@@ -4,13 +4,14 @@ import {
   Home,
   Logout,
   Messages,
-  NavBar,
-  PostList,
   Profile,
   Users,
+  NavBar,
+  PostList,
   Register,
   Login,
   SinglePost,
+  CreateNewPost,
 } from "components";
 import { fetchMe } from "api/auth";
 
@@ -37,11 +38,11 @@ export default function App() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar setToken={setToken} />
       <Routes>
-        {/* <Route path="/home" element={<Home />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/messages" element={<Messages />} /> */}
+        {/* <Route path="/home" element={<Home />} /> */}
+        {/* <Route path="/logout" element={<Logout />} /> */}
+        {/* <Route path="/messages" element={<Messages />} /> */}
         <Route
           path="/posts"
           element={<PostList setPostList={setPostList} postList={postList} />}
@@ -54,6 +55,9 @@ export default function App() {
           element={<SinglePost setPostList={setPostList} postList={postList} />}
         />
         <Route path="/login" element={<Login setToken={setToken} />} />
+        {token ? (
+          <Route path="/createPost" element={<CreateNewPost token={token} />} />
+        ) : null}
       </Routes>
     </div>
   );

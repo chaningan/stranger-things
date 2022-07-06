@@ -1,15 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function NavBar() {
+export default function NavBar({ setToken }) {
   return (
     <nav>
-      <Link to="/">Home </Link>
+      <Link to="/home">Home </Link>
       <Link to="/posts">Post </Link>
+      <Link to="/createPost">Create Post </Link>
       <Link to="/profile">Profile </Link>
       <Link to="/Register">Register </Link>
-      <Link to="/login">Login</Link>
-      <Link to="/logout">Logout </Link>
+      <Link to="/login">Login </Link>
+
+      <button
+        onClick={() => {
+          setToken(null);
+          localStorage.clear();
+        }}
+      >
+        {" "}
+        Logout{" "}
+      </button>
     </nav>
   );
 }

@@ -15,6 +15,7 @@ export const fetchPostById = async (id) => {
 };
 
 export const createPost = async (token, postObj) => {
+  console.log("token", token, postObj);
   const response = await fetch(
     "https://strangers-things.herokuapp.com/api/2206-ftb-mt-web-ft/posts",
     {
@@ -23,7 +24,7 @@ export const createPost = async (token, postObj) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(postObj),
+      body: JSON.stringify({ post: postObj }),
     }
   );
   const result = await response.json();

@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 export default function PostCard({ post }) {
   const navigate = useNavigate();
 
-  console.log("THE POST IN THE CARD", post);
-
   return (
     <div
       onClick={() => {
