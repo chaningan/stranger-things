@@ -4,14 +4,28 @@ import { Link } from "react-router-dom";
 export default function NavBar({ setToken }) {
   return (
     <nav>
-      <Link to="/home">Home </Link>
-      <Link to="/posts">Post </Link>
-      <Link to="/createPost">Create Post </Link>
-      <Link to="/profile">Profile </Link>
-      <Link to="/Register">Register </Link>
-      <Link to="/login">Login </Link>
+      <h3 id="title">Stranger's Things</h3>
+      <Link className="link" to="/home">
+        Home{" "}
+      </Link>
+      <Link className="link" to="/posts">
+        Posts{" "}
+      </Link>
+      <Link className="link" to="/createPost">
+        Create Post{" "}
+      </Link>
+      <Link className="link" to="/profile">
+        Profile{" "}
+      </Link>
+      <Link className="link" to="/Register">
+        Register{" "}
+      </Link>
+      <Link className="link" to="/login">
+        Login{" "}
+      </Link>
 
       <button
+        id="logoutButton"
         onClick={() => {
           setToken(null);
           localStorage.clear();

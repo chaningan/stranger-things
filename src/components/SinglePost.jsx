@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { deletePost, fetchPostById, editPost } from "api/posts";
+import { deletePost, fetchPostById, editPost, messagePost } from "api/posts";
 import PostCard from "./PostCard";
 import { useNavigate } from "react-router-dom";
+import EditNewPost from "./EditNewPost";
+
 export default function SinglePost({
   postList,
   setPostList,
@@ -12,6 +14,8 @@ export default function SinglePost({
   const params = useParams();
   const [singlePost, setSinglePost] = useState({});
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
+
   // console.log("PostList inside SP", postList);
   useEffect(() => {
     const postToDisplay = postList.filter((post) => {
@@ -20,7 +24,7 @@ export default function SinglePost({
 
     setSinglePost(postToDisplay[0]);
   }, []);
-  console.log("single post", singlePost);
+
   return (
     <div>
       <PostCard post={singlePost} />
@@ -28,20 +32,41 @@ export default function SinglePost({
         <button
           onClick={() => {
             deletePost(token, singlePost?._id);
-            navigate("/");
+            navigate("/posts");
           }}
         >
-          Delete
+          DELETE
         </button>
       ) : null}
       {currentUser?._id === singlePost?.author?._id ? (
         <button
           onClick={() => {
-            editPost(token, singlePost?._id, singlePost);
+            editPost(token, singlePost?._id);
           }}
         >
-          Edit
+          EDIT
         </button>
+      ) : null}
+
+      {currentUser?._id !== singlePost?.author?._id ? (
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const result = await messagePost(token, singlePost?._id, message);
+            navigate("/posts");
+          }}
+        >
+          <input
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+          ></input>
+          <button type="submit">MESSAGE</button>
+        </form>
+      ) : null}
+      {currentUser?._id === singlePost?.author?._id ? (
+        <EditNewPost token={token} id={singlePost?._id} />
       ) : null}
     </div>
   );

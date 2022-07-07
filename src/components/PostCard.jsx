@@ -5,6 +5,7 @@ export default function PostCard({ post }) {
 
   return (
     <div
+      id="postList"
       onClick={() => {
         navigate(`${post._id}`);
       }}

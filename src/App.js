@@ -12,6 +12,7 @@ import {
   Login,
   SinglePost,
   CreateNewPost,
+  EditNewPost,
 } from "components";
 import { fetchMe } from "api/auth";
 
@@ -43,6 +44,7 @@ export default function App() {
         {/* <Route path="/home" element={<Home />} /> */}
         {/* <Route path="/logout" element={<Logout />} /> */}
         {/* <Route path="/messages" element={<Messages />} /> */}
+
         <Route
           path="/posts"
           element={<PostList setPostList={setPostList} postList={postList} />}
@@ -65,6 +67,8 @@ export default function App() {
         {token ? (
           <Route path="/createPost" element={<CreateNewPost token={token} />} />
         ) : null}
+
+        <Route path="/editPost" element={<EditNewPost token={token} />} />
       </Routes>
     </div>
   );

@@ -10,8 +10,9 @@ export default function Login({ setToken }) {
 
   return (
     <div>
-      <h4>Login:</h4>
+      <h4 id="loginTitle">Login Here:</h4>
       <form
+        id="loginInfo"
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await loginUser(username, password);
@@ -22,17 +23,21 @@ export default function Login({ setToken }) {
         }}
       >
         <input
+          id="userinput"
           value={username}
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
+          id="userinput"
           value={password}
           placeholder="Password"
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button id="loginButton" type="submit">
+          LOGIN
+        </button>
       </form>
     </div>
   );

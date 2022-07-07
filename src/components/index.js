@@ -9,3 +9,4 @@ export { default as Register } from "./Register";
 export { default as Login } from "./Login";
 export { default as SinglePost } from "./SinglePost";
 export { default as CreateNewPost } from "./CreateNewPost";
+export { default as EditNewPost } from "./EditNewPost";

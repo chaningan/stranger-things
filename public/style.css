@@ -1,0 +1,70 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#title {
+  font-size: 35px;
+  margin: 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  margin: 15px;
+}
+
+nav {
+  border: 2px solid black;
+  margin: 20px;
+  padding: 12px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: rgb(120, 184, 134);
+}
+
+#logoutButton {
+  border: none;
+  font-size: 16px;
+  background-color: rgb(120, 184, 134);
+}
+
+#loginTitle,
+#registerTitle,
+#newPostTitle {
+  text-align: center;
+  font-size: 30px;
+  margin: 20px;
+}
+
+#loginInfo,
+#reginfo,
+#newPostInfo {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+#userinput {
+  padding: 5px;
+  margin: 10px;
+}
+
+#loginButton,
+#regButton,
+#createButton {
+  background-color: rgb(216, 231, 216);
+}
+
+#postList {
+  border: 2px solid black;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(216, 231, 216);
+}

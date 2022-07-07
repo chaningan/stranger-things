@@ -11,8 +11,9 @@ export default function Register({ setToken, setNewUser }) {
 
   return (
     <div>
-      <h4>Register Here:</h4>
+      <h4 id="registerTitle">Register Here:</h4>
       <form
+        id="reginfo"
         onSubmit={async (e) => {
           e.preventDefault();
           const result = await createUser(username, password);
@@ -23,11 +24,13 @@ export default function Register({ setToken, setNewUser }) {
         }}
       >
         <input
+          id="userinput"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
+          id="userinput"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -37,7 +40,10 @@ export default function Register({ setToken, setNewUser }) {
           value={confirmation}
           onChange={(e) => setConfirmation(e.target.value)}
         /> */}
-        <button type="submit"> Register </button>
+        <button id="regButton" type="submit">
+          {" "}
+          REGISTER{" "}
+        </button>
         {/* conditionally submit based on password and confirmation matching */}
       </form>
     </div>
