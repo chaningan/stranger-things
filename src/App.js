@@ -21,9 +21,6 @@ export default function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [postList, setPostList] = useState([]);
 
-  console.log("Token", token);
-  console.log("Current User", currentUser);
-
   useEffect(() => {
     const myLocalStorageToken = localStorage.getItem("token");
 
@@ -44,13 +41,21 @@ export default function App() {
         {/* <Route path="/home" element={<Home />} /> */}
         {/* <Route path="/logout" element={<Logout />} /> */}
         {/* <Route path="/messages" element={<Messages />} /> */}
-
         <Route
           path="/posts"
           element={<PostList setPostList={setPostList} postList={postList} />}
         />
-        {/* /* <Route path="/profile" element={<Profile />} />
-         */}
+        /*{" "}
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              currentUser={currentUser}
+              setCurrentUser={setCurrentUser}
+              setToken={setToken}
+            />
+          }
+        />
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route
           path="/posts/:id"
@@ -67,7 +72,6 @@ export default function App() {
         {token ? (
           <Route path="/createPost" element={<CreateNewPost token={token} />} />
         ) : null}
-
         <Route path="/editPost" element={<EditNewPost token={token} />} />
       </Routes>
     </div>

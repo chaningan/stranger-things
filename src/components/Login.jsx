@@ -3,7 +3,6 @@ import { loginUser } from "api/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login({ setToken }) {
-  console.log(setToken);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();

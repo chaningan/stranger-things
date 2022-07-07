@@ -21,7 +21,6 @@ export default function CreateNewPost({ token }) {
             price,
             location,
           });
-          console.log(result);
           navigate("/posts");
         }}
       >
