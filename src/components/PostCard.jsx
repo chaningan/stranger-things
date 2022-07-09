@@ -10,14 +10,24 @@ export default function PostCard({ post }) {
         navigate(`${post._id}`);
       }}
     >
-      <ul>
+      <ul id="postUl">
         {post?.title ? (
           <>
-            <li>Title: {post.title}</li>
-            <li>Description: {post.description}</li>
-            <li>Price: {post.price}</li>
-            <li>Location: {post.location}</li>
-            <li>Delivery: {post.willDeliver}</li>
+            <li id="postTitle">Title: {post.title}</li>
+
+            <li>
+              <strong>Description:</strong> {post.description}
+            </li>
+            <li>
+              <strong>Price:</strong> {post.price}
+            </li>
+
+            <li>
+              <strong>Location:</strong> {post.location}
+            </li>
+            <li>
+              <strong>Delivery:</strong> {post.willDeliver}
+            </li>
           </>
         ) : null}
       </ul>

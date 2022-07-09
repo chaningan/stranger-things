@@ -5,8 +5,14 @@ export default function NavBar({ setToken }) {
   return (
     <nav>
       <h3 id="title">Stranger's Things</h3>
-      <Link className="link" to="/home">
+      {/* <Link className="link" to="/home">
         Home{" "}
+      </Link> */}
+      <Link className="link" to="/login">
+        Login{" "}
+      </Link>
+      <Link className="link" to="/profile">
+        Profile{" "}
       </Link>
       <Link className="link" to="/posts">
         Posts{" "}
@@ -14,14 +20,9 @@ export default function NavBar({ setToken }) {
       <Link className="link" to="/createPost">
         Create Post{" "}
       </Link>
-      <Link className="link" to="/profile">
-        Profile{" "}
-      </Link>
+
       <Link className="link" to="/Register">
         Register{" "}
-      </Link>
-      <Link className="link" to="/login">
-        Login{" "}
       </Link>
 
       <button

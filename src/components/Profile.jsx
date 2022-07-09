@@ -11,7 +11,6 @@ export default function Profile({ currentUser, setCurrentUser, setToken }) {
     async function getMe() {
       const result = await fetchMe(myLocalStorageToken);
       setCurrentUser(result.data);
-      // setToken(myLocalStorageToken);
     }
     if (myLocalStorageToken) {
       getMe();
@@ -21,16 +20,12 @@ export default function Profile({ currentUser, setCurrentUser, setToken }) {
     <div>
       {currentUser?.messages?.map((message, index) => {
         return (
-          <div key={`Key: ${index}`}>
+          <div id="postList" key={`Key: ${index}`}>
             {" "}
             <MessageCard message={message} />
-            {/* <ul message={message}>
-              <li>{message.post.title}</li>
-              <li> {message.content}</li>
-            </ul> */}
             <button
+              id="viewPostButton"
               onClick={() => {
-                // if (message.post.active) navigate(`/${message.post._id}`);
                 navigate(`/posts/${message.post._id}`);
               }}
             >
@@ -42,5 +37,3 @@ export default function Profile({ currentUser, setCurrentUser, setToken }) {
     </div>
   );
 }
-
-//messagesToMeCard

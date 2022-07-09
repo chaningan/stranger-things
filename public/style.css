@@ -2,6 +2,7 @@
   font-family: "Courier New", Courier, monospace;
 }
 
+/* NavBar */
 #title {
   font-size: 35px;
   margin: 10px;
@@ -23,12 +24,14 @@ nav {
   background-color: rgb(120, 184, 134);
 }
 
+/* Logout button in Navbar*/
 #logoutButton {
   border: none;
   font-size: 16px;
   background-color: rgb(120, 184, 134);
 }
 
+/* Register, Login, Create Post Titles*/
 #loginTitle,
 #registerTitle,
 #newPostTitle {
@@ -37,9 +40,11 @@ nav {
   margin: 20px;
 }
 
+/*Register, Login, Create Post Forms*/
 #loginInfo,
 #reginfo,
-#newPostInfo {
+#newPostInfo,
+#editPostInfo {
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -50,6 +55,11 @@ nav {
   text-align: center;
 }
 
+#error {
+  text-align: center;
+}
+
+/*Spacing between inputs*/
 #userinput {
   padding: 5px;
   margin: 10px;
@@ -57,14 +67,103 @@ nav {
 
 #loginButton,
 #regButton,
-#createButton {
+#createButton,
+#messageButton,
+#subButton {
   background-color: rgb(216, 231, 216);
 }
 
+/* Posts Component*/
 #postList {
   border: 2px solid black;
   margin: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: rgb(216, 231, 216);
+}
+
+#postUl {
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+}
+
+#postTitle {
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+/*Message Input from SinglePost route*/
+#messageInfo {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+/*Profile: List of messages user sends with Post Title and Message*/
+#messageContent {
+  list-style: none;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#msgPostTitle {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+#msg {
+  padding-top: 20px;
+}
+
+#viewPostButton {
+  background-color: white;
+  border: 2px solid rgb(120, 184, 134);
+  margin: 10px;
+  padding: 5px;
+}
+
+/* Edit/Delete Users Own Post */
+
+#deleteButton {
+  background-color: rgb(248, 107, 107);
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+
+#editButton {
+  background-color: rgb(216, 231, 216);
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  border: 1px solid black;
 }

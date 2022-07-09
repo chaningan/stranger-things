@@ -5,16 +5,15 @@ export default function MessageCard({ message }) {
 
   return (
     <div
-      id="messageCard"
       onClick={() => {
         navigate(`${message.post._id}`);
       }}
     >
-      <ul>
+      <ul id="messageContent">
         {message?.post ? (
           <>
-            <li>{message.content}</li>
-            <li>Title: {message.post.title}</li>
+            <li id="msgPostTitle">Title: {message.post.title}</li>
+            <li id="msg">Message: {message.content}</li>
           </>
         ) : null}
       </ul>

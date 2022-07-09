@@ -1,11 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
-  Home,
-  Logout,
-  Messages,
   Profile,
-  Users,
   NavBar,
   PostList,
   Register,
@@ -39,8 +35,6 @@ export default function App() {
       <NavBar setToken={setToken} />
       <Routes>
         {/* <Route path="/home" element={<Home />} /> */}
-        {/* <Route path="/logout" element={<Logout />} /> */}
-        {/* <Route path="/messages" element={<Messages />} /> */}
         <Route
           path="/posts"
           element={<PostList setPostList={setPostList} postList={postList} />}

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { deletePost, fetchPostById, editPost, messagePost } from "api/posts";
+import { deletePost, editPost, messagePost } from "api/posts";
 import PostCard from "./PostCard";
 import { useNavigate } from "react-router-dom";
 import EditNewPost from "./EditNewPost";
 
 export default function SinglePost({
   postList,
-  setPostList,
+  // setPostList,
   currentUser,
   token,
 }) {
@@ -16,7 +16,6 @@ export default function SinglePost({
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
 
-  // console.log("PostList inside SP", postList);
   useEffect(() => {
     const postToDisplay = postList.filter((post) => {
       return post._id === params.id;
@@ -30,16 +29,18 @@ export default function SinglePost({
       <PostCard post={singlePost} />
       {currentUser?._id === singlePost?.author?._id ? (
         <button
+          id="deleteButton"
           onClick={() => {
             deletePost(token, singlePost?._id);
             navigate("/posts");
           }}
         >
-          DELETE
+          DELETE POST
         </button>
       ) : null}
       {currentUser?._id === singlePost?.author?._id ? (
         <button
+          id="editButton"
           onClick={() => {
             editPost(token, singlePost?._id);
           }}
@@ -50,19 +51,26 @@ export default function SinglePost({
 
       {currentUser?._id !== singlePost?.author?._id ? (
         <form
+          id="messageInfo"
           onSubmit={async (e) => {
             e.preventDefault();
             const result = await messagePost(token, singlePost?._id, message);
             navigate("/posts");
           }}
         >
+          <h2 id="messageTitle">Message:</h2>
           <input
+            id="userinput"
             value={message}
+            placeholder="Input message here"
             onChange={(e) => {
               setMessage(e.target.value);
             }}
           ></input>
-          <button type="submit">MESSAGE</button>
+
+          <button id="messageButton" type="submit">
+            SEND
+          </button>
         </form>
       ) : null}
       {currentUser?._id === singlePost?.author?._id ? (

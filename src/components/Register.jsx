@@ -7,11 +7,11 @@ export default function Register({ setToken, setNewUser }) {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  //   const [confirmation, setConfirmation] = useState("");
 
   return (
     <div>
       <h4 id="registerTitle">Register Here:</h4>
+
       <form
         id="reginfo"
         onSubmit={async (e) => {
@@ -20,7 +20,6 @@ export default function Register({ setToken, setNewUser }) {
           setToken(result.data.token);
           localStorage.setItem("token", result.data.token);
           navigate("/");
-          console.log(result);
         }}
       >
         <input

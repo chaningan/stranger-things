@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+
 export default function SearchBar({ postList }) {
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
