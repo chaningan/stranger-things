@@ -19,7 +19,7 @@ export default function Register({ setToken, setNewUser }) {
           const result = await createUser(username, password);
           setToken(result.data.token);
           localStorage.setItem("token", result.data.token);
-          navigate("/");
+          navigate("/posts");
         }}
       >
         <input
