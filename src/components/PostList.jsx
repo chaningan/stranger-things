@@ -14,8 +14,13 @@ export default function PostList({ postList, setPostList }) {
   }, []);
 
   return (
-    <div>
-      <input id="searchBar" onChange={(e) => setSearchTerm(e.target.value)} />
+    <div id="searchInfo">
+      <strong>Search Here: </strong>
+      <input
+        id="searchBar"
+        placeholder="Search posts"
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       {postList
         .filter((post) => {
           if (searchTerm === "") {

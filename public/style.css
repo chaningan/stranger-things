@@ -96,6 +96,11 @@ nav {
   text-decoration: underline;
   text-decoration-color: white;
 }
+
+#searchInfo {
+  text-align: center;
+}
+
 /*Message Input from SinglePost route*/
 #messageInfo {
   display: flex;
